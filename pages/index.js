@@ -31,7 +31,7 @@ const Home = ({filters}) => {
   )
 }
 
-export const getStaticProps = async () => {
+export const getInitialProps = async () => {
   let data = await api.get('/api/filters').then(response => {
     return response.data;
   });
