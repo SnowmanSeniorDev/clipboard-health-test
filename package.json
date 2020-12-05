@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
+    "axios": "^0.21.0",
     "cross-env": "^7.0.3",
     "jslinq": "^1.0.22",
     "next": "10.0.3",
