@@ -14,11 +14,8 @@ const Home = () => {
       fetch('/api/filters', { method: 'GET' }).then(async res => {
         setFilters(await res.json());
       });
+      dispatch(setKeyword(""));
   }, [setFilters]);
-
-  useEffect(() => {            
-    dispatch(searchJobs(query))
-  }, [dispatch]);
 
 
   return (
