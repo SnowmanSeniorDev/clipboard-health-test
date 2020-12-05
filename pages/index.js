@@ -3,7 +3,7 @@ import { setKeyword } from '../store/jobs.action'
 import { Filters, Jobs } from '../components';
 import api from '../ApiConfig';
 
-const Home = ({filters}) => {
+const Home = () => {
   const dispatch = useDispatch()
   const state = useSelector((state) => state)  
   const { query } = state.jobs
