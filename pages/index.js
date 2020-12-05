@@ -31,7 +31,7 @@ const Home = ({filters}) => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   let data = await api.get('/api/filters').then(response => {
     return response.data;
   });
