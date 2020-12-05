@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_PATH=src next dev",
-    "build": "npm run build-css && cross-env NODE_PATH=src next build && cross-env NODE_PATH=src next export",
+    "dev": "next dev",
+    "build": "npm run build-css && next build && next export",
     "build-css": "tailwind build ./styles/globals.css -c ./tailwind.config.js -o ./styles/globals.css",
     "postbuild": "next-on-netlify",
     "start": "next start",
