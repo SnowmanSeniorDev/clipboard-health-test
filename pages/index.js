@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setKeyword } from '../store/jobs.action'
+import { setKeyword, searchJobs } from '../store/jobs.action'
 import { Filters, Jobs } from '../components';
 import api from '../ApiConfig';
 
@@ -10,11 +10,16 @@ const Home = () => {
   const { query } = state.jobs
   
   const [ filters, setFilters ] = useState([]);
-    useEffect(() => {        
-        fetch('/api/filters', { method: 'GET' }).then(async res => {
-          setFilters(await res.json());
-        });
-    }, [setFilters]);
+  useEffect(() => {        
+      fetch('/api/filters', { method: 'GET' }).then(async res => {
+        setFilters(await res.json());
+      });
+  }, [setFilters]);
+
+  useEffect(() => {            
+    dispatch(searchJobs(query))
+  }, [dispatch]);
+
 
   return (
     <div>

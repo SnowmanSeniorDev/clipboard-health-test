@@ -5,7 +5,7 @@ export const SET_QUERY_KEYWORD = '[HOME] SET QUERY KEYWORD'
 export const SET_QUERY_FILTERS = '[HOME] SET QUERY FILTERS'
 export const SET_QUERY_SORTS = '[HOME] SET QUERY SORTS'
 
-const searchJobs = async (query) => {
+export const searchJobs = async (query) => {
     console.log(query)
     return await api.post('/api/jobs', query)
         .then((response) => {    
