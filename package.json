@@ -3,20 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_PATH=src next dev",
+    "build": "npm run build-css && cross-env NODE_PATH=src next build && cross-env NODE_PATH=src next export",
     "build-css": "tailwind build ./styles/globals.css -c ./tailwind.config.js -o ./styles/globals.css",
-    "start": "next start"
+    "postbuild": "next-on-netlify",
+    "start": "next start",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
-    "axios": "^0.21.0",
+    "cross-env": "^7.0.3",
     "jslinq": "^1.0.22",
     "next": "10.0.3",
+    "next-redux-wrapper": "^6.0.2",
+    "next-on-netlify": "^2.6.3",
+    "node-mocks-http": "^1.9.0",
+    "postcss": "^8.1.13",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "tailwindcss": "^2.0.1"
   }
