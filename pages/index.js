@@ -8,6 +8,12 @@ const Home = ({filters}) => {
   const state = useSelector((state) => state)  
   const { query } = state.jobs
   
+  const [ filters, setFilters ] = useState([]);
+    useEffect(() => {        
+        fetch('/api/filters', { method: 'GET' }).then(async res => {
+          setFilters(await res.json());
+        });
+    }, [setFilters]);
 
   return (
     <div>
@@ -30,17 +36,5 @@ const Home = ({filters}) => {
     </div>
   )
 }
-
-export const getInitialProps = async () => {
-  let data = await api.get('/api/filters').then(response => {
-    return response.data;
-  });
-  
-  return {
-    props: { 
-      filters: data    
-    }
-  }
-};
 
 export default Home;
