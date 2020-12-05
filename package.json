@@ -1,0 +1,23 @@
+{
+  "name": "fullstack-candidate-testing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build-css": "tailwind build ./styles/globals.css -c ./tailwind.config.js -o ./styles/globals.css",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "axios": "^0.21.0",
+    "jslinq": "^1.0.22",
+    "next": "10.0.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "tailwindcss": "^2.0.1"
+  }
+}
