@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setKeyword } from '../store/jobs.action'
 import { Filters, Jobs } from '../components';
